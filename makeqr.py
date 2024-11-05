@@ -12,9 +12,12 @@ args = vars(parser.parse_args())
 
 user_path = args["path"]
 
-img = make(data = args["path"])
+img = make(data = args["user_text"])
 
 file_path = "qr" + str(randint(4545, 9654)) + ".png"
 file_path = path.join(user_path, file_path)
 img.save(file_path, "PNG")
 print(f"QR Code created at: {file_path}")
+
+# Command to build:
+# pyinstaller --noconfirm --onefile --console  "C:\Users\jp\Desktop\CodeProjects\makeqr\makeqr.py"
